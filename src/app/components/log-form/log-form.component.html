@@ -6,7 +6,7 @@
     </div>
     <input type="submit" name="" value="Add Log" class="btn btn-light"
       [disabled]="!this.text">
-    <button type="button" class="btn btn-warning"
+    <button (click)="clearState()" type="button" class="btn btn-warning"
       [hidden]="!this.text">Clear</button>
   </form>
 </div>

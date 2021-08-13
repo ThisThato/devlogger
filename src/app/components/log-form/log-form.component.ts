@@ -31,8 +31,6 @@ export class LogFormComponent implements OnInit {
   }
 
   onSubmit() {
-
-
     if (this.isNew) {
       const newLog: Log = {
         id: this.generateId(),
@@ -51,6 +49,18 @@ export class LogFormComponent implements OnInit {
       //update log
       this.logService.updateLog(logUpdate)
     }
+
+    //clear state
+    this.clearState();
+  }
+
+  clearState() {
+    this.id = '';
+    this.text = '';
+    this.date = null;
+    this.isNew = true;
+
+    this.logService.clearState();
   }
 
   generateId() {
